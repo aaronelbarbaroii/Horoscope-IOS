@@ -20,6 +20,7 @@ class MainViewController: UIViewController, UITableViewDataSource {
         tableView.dataSource = self
     }
     
+    // Esto sería el adapter de android
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return horoscopeList.count
     }
@@ -31,6 +32,7 @@ class MainViewController: UIViewController, UITableViewDataSource {
         return cell
     }
     
+    // La navegación entre pantallas
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "NavigationDetailController" {
             let detailVC = segue.destination as! DetailViewController

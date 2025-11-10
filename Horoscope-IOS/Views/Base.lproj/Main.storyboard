@@ -33,14 +33,14 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="nameLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n6s-aB-rVo">
                                                     <rect key="frame" x="101" y="21" width="272" height="24"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="datesLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WTx-7P-SKg">
                                                     <rect key="frame" x="101" y="53" width="272" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -88,31 +88,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4hg-qC-ek4">
-                                <rect key="frame" x="16" y="164" width="362" height="240"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iEe-uf-MAo">
-                                <rect key="frame" x="16" y="416" width="362" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fecha" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPC-p2-dNX">
-                                <rect key="frame" x="16" y="445" width="362" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Osy-BC-Q7b">
-                                <rect key="frame" x="16" y="474" width="362" height="322"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ACu-F7-HQI">
+                                <rect key="frame" x="0.0" y="172" width="393" height="612"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Bb8-TO-QB2">
-                                        <rect key="frame" x="0.0" y="0.0" width="362" height="322"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="q4Q-p0-JpC">
+                                        <rect key="frame" x="126" y="0.0" width="140" height="140"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="SlW-g5-Vb9">
+                                        <rect key="frame" x="8" y="164" width="377" height="32"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <segments>
+                                            <segment title="Daily"/>
+                                            <segment title="Weekly"/>
+                                            <segment title="Monthly"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="didChangePeriod:" destination="qDU-4l-J0k" eventType="valueChanged" id="UIx-x3-JPZ"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="rfP-G3-hJs">
+                                        <rect key="frame" x="8" y="209" width="377" height="395"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" systemColor="labelColor"/>
@@ -120,12 +117,17 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <viewLayoutGuide key="contentLayoutGuide" id="igp-4R-Nk1"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="pNg-PH-PP6"/>
-                            </scrollView>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Puh-OX-mVe"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Puh-OX-mVe" firstAttribute="trailing" secondItem="ACu-F7-HQI" secondAttribute="trailing" id="Abb-x7-oky"/>
+                            <constraint firstItem="ACu-F7-HQI" firstAttribute="top" secondItem="Puh-OX-mVe" secondAttribute="top" id="Jif-AB-q2m"/>
+                            <constraint firstItem="ACu-F7-HQI" firstAttribute="leading" secondItem="Puh-OX-mVe" secondAttribute="leading" id="S6o-NP-AvG"/>
+                            <constraint firstItem="Puh-OX-mVe" firstAttribute="bottom" secondItem="ACu-F7-HQI" secondAttribute="bottom" id="dRZ-Cy-9nM"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="aD9-Xk-jgr">
                         <rightBarButtonItems>
@@ -134,10 +136,8 @@
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
-                        <outlet property="fechaLabel" destination="cPC-p2-dNX" id="Zzl-Yw-RDi"/>
-                        <outlet property="horoscopeText" destination="Bb8-TO-QB2" id="yrY-Ei-m8k"/>
-                        <outlet property="imageDetail" destination="4hg-qC-ek4" id="7rd-c1-Awc"/>
-                        <outlet property="nameLabel" destination="iEe-uf-MAo" id="8hx-wf-4UK"/>
+                        <outlet property="imageDetail" destination="q4Q-p0-JpC" id="UpI-eO-Qli"/>
+                        <outlet property="predictionTextView" destination="rfP-G3-hJs" id="c5m-X3-FPP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FJd-qL-tK8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
