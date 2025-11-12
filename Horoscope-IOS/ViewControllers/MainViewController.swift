@@ -7,11 +7,13 @@
 
 import UIKit
 
-class MainViewController: UIViewController, UITableViewDataSource {
+class MainViewController: UIViewController, UITableViewDataSource, UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
-    let horoscopeList: [Horoscope] = Horoscope.getAll()
+    @IBOutlet weak var searchBar: UISearchBar!
+    
+    var horoscopeList: [Horoscope] = Horoscope.getAll()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,6 +21,31 @@ class MainViewController: UIViewController, UITableViewDataSource {
         
         tableView.dataSource = self
     }
+    
+    
+    
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            
+        tableView.reloadData()
+    }
+    
+    /*override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+        }*/
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+            if searchText.isEmpty {
+                horoscopeList = Horoscope.getAll()
+            }
+            else {
+                horoscopeList = Horoscope.getAll().filter {
+                    $0.name.range(of: searchText, options: .caseInsensitive) != nil }
+            }
+            tableView.reloadData()
+        }
+    
     
     // Esto sería el adapter de android
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
